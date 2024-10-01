@@ -1,8 +1,6 @@
 from passwordManager.create_hash import generate_secret_key
 from cryptography.fernet import Fernet
-
 import base64
-
 
 encryption_key = Fernet.generate_key()
 print(encryption_key)
@@ -24,10 +22,3 @@ def decrypt_password(encrypted_pwd_str: str, encryption_key: bytes):
         return None
     return decrypted_value.decode()
 
-### WAS TESTING ###
-# password = "my_secure_password"
-# encrypted_password = encrypt_password(password, encryption_key)
-# print("Encrypted:", encrypted_password)
-#
-# decrypted_password = decrypt_password(encrypted_password, encryption_key)
-# print("Decrypted:", decrypted_password)
