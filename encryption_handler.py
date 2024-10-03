@@ -1,4 +1,4 @@
-from passwordManager.create_hash import generate_secret_key
+
 from cryptography.fernet import Fernet
 import base64
 
@@ -10,9 +10,14 @@ def encrypt_password(password: str, encryption_key: bytes):
     password_bytes = password.encode()
     cipher_suite = Fernet(encryption_key)
     encrypted_pwd = cipher_suite.encrypt(password_bytes)
+    # urlsafe_b64encode --> Encode bytes using the URL- and filesystem-safe Base64 alphabet.
+    # Argument s is a bytes-like object to encode.
     return base64.urlsafe_b64encode(encrypted_pwd).decode('utf-8')
 
 def decrypt_password(encrypted_pwd_str: str, encryption_key: bytes):
+
+    # urlsafe_b64decode --> Decode bytes using the URL- and filesystem-safe Base64 alphabet.
+    # Argument is a bytes-like object or ASCII string to decode
     encrypted_pwd_bytes = base64.urlsafe_b64decode(encrypted_pwd_str.encode('utf-8'))
     cipher_suite = Fernet(encryption_key)
     try:

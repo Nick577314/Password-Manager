@@ -1,5 +1,5 @@
 import psycopg2
-from passwordManager.secret_key import encrypt_password, encryption_key, decrypt_password
+from passwordManager.encryption_handler import encrypt_password, encryption_key, decrypt_password
 from passwordManager.password import plaintext_pwd
 
 #function that is used to insert data into the table by a query and if it fails the appropriate error is printed to the terminal

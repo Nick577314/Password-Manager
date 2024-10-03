@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QWidget, QVBoxLay
 
 from database_connect import store_info  # Your function to store info in the database
 from passwordManager.database_connect import find_info
-from passwordManager.secret_key import decrypt_password, encryption_key
+from passwordManager.encryption_handler import decrypt_password, encryption_key
 
 
 class PasswordManagerApp(QMainWindow):

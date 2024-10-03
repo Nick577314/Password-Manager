@@ -24,3 +24,7 @@ A secure and user-friendly password manager that allows users to store, retrieve
 
 ## Currently working on adding:
 - setting up backend for registering and login functions
+
+
+## Files not included:
+- cryptography.py which stores the encryption and decryption functions for the passwords.

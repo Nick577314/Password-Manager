@@ -1,6 +1,6 @@
 from operator import truediv
 
-from passwordManager.create_hash import make_password, verify_password
+from passwordManager.password_hashing import make_password, verify_password
 import psycopg2
 from database_connect import connect
 
